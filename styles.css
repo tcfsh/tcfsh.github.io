@@ -1,0 +1,32 @@
+/* styles.css content with enhanced glowing effects */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+.hero {
+    text-align: center;
+    padding: 50px;
+}
+.title {
+    font-size: 32px;
+    color: #333;
+}
+.fade-in {
+    animation: fadeIn 2s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.logo-wireframe {
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+    animation: glow 1.5s infinite alternate;
+}
+@keyframes glow {
+    from { filter: drop-shadow(0 0 5px #fff); }
+    to { filter: drop-shadow(0 0 20px #ff0); }
+}
