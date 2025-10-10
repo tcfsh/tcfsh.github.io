@@ -1,0 +1,36 @@
+.logo-container {
+  /* Updated from .logo-wireframe-container */
+  position: relative;
+  display: inline-block;
+}
+
+.logo-3d {
+  /* Updated from .logo-wireframe */
+  background-image: url('path/to/your/image.png'); /* Specify the path to your 2D image */
+  filter: drop-shadow(0 0 5px red); /* Glow effect */
+  /* Remove 3D transform styles */
+}
+
+body {
+  background-color: #000000; /* Pure black background */
+}
+
+/* Update any white backgrounds to black */
+.white-background {
+  background-color: #000000;
+}
+
+/* Subtle dark gray borders */
+.border {
+  border: 1px solid #333333; /* Dark gray */
+}
+
+/* Ensure all sections have black or very dark backgrounds */
+section {
+  background-color: #000000;
+}
+
+/* Remove 3D wireframe logo styles */
+.orbit, .electron, .letter, .star {
+  display: none;
+}
