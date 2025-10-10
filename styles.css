@@ -5,13 +5,11 @@
 }
 
 :root {
-    --color-black: #000000;
-    --color-white: #ffffff;
-    --color-gray-dark: #0a0a0a;
-    --color-gray: #1a1a1a;
-    --color-gray-mid: #2a2a2a;
-    --color-gray-light: #333333;
-    --color-accent: #e0e0e0;
+    --color-black: #1a1a1a;     
+    --color-gray-dark: #242424;   
+    --color-gray: #2e2e2e;         
+    --color-gray-mid: #3a3a3a;     
+    --color-gray-light: #4a4a4a; 
 }
 
 html {
