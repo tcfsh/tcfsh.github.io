@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>rethinking_big_tech.md ~ farmernet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0a0d16;
+    --panel:#141a29;
+    --panel-2:#0e1420;
+    --border:#3a4568;
+    --border-hi:#6a7ab0;
+    --border-lo:#05060a;
+    --ink:#eef1ff;
+    --muted:#8892b5;
+    --green:#6bff8a;
+    --cyan:#5ee6ff;
+    --pink:#ff5da2;
+    --yellow:#ffd23f;
+    --font-pixel:'Press Start 2P', monospace;
+    --font-term:'VT323', ui-monospace, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    background:var(--bg);
+    background-image:
+      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size:24px 24px;
+    color:var(--ink);
+    font-family:var(--font-term);
+    min-height:100vh;
+  }
+  .crt{ position:fixed; inset:0; z-index:5; pointer-events:none; }
+  .crt::before{
+    content:'';
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(to bottom, rgba(0,0,0,0) 0 2px, rgba(0,0,0,.18) 2px 4px);
+    mix-blend-mode:multiply;
+  }
+  .crt::after{
+    content:'';
+    position:absolute; inset:0;
+    background:radial-gradient(ellipse at 50% 30%, transparent 55%, rgba(0,0,0,.55) 100%);
+  }
+  .page{
+    position:relative; z-index:1;
+    max-width:720px;
+    margin:0 auto;
+    padding:40px 18px 72px;
+  }
+  .win{
+    background:var(--panel);
+    border:4px solid var(--border);
+    box-shadow:
+      inset 2px 2px 0 var(--border-hi),
+      inset -2px -2px 0 var(--border-lo),
+      8px 8px 0 rgba(0,0,0,.5);
+  }
+  .win-bar{
+    display:flex; align-items:center; gap:10px;
+    padding:10px 14px;
+    background:var(--panel-2);
+    border-bottom:4px solid var(--border);
+  }
+  .win-dot{ width:11px; height:11px; flex:none; }
+  .win-dot.pink{ background:var(--pink); }
+  .win-dot.yellow{ background:var(--yellow); }
+  .win-dot.green{ background:var(--green); }
+  .win-title{
+    margin-left:6px;
+    font-size:16px;
+    color:var(--muted);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .win-body{ padding:30px 26px 40px; }
+
+  .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:var(--cyan);
+    text-decoration:none;
+    font-size:17px;
+    margin-bottom:24px;
+    border-bottom:2px dashed var(--border);
+    padding-bottom:2px;
+  }
+  .back-link:hover{ color:var(--green); }
+
+  h1.article-title{
+    font-family:var(--font-pixel);
+    font-size:clamp(16px, 4.2vw, 22px);
+    line-height:1.6;
+    color:var(--green);
+    text-shadow:2px 2px 0 rgba(0,0,0,.6);
+    margin:0 0 24px;
+  }
+
+  article h2{
+    font-family:var(--font-pixel);
+    font-size:14px;
+    color:var(--yellow);
+    letter-spacing:.5px;
+    margin:34px 0 14px;
+    padding-bottom:8px;
+    border-bottom:3px solid var(--border);
+  }
+  article p{
+    font-size:20px;
+    line-height:1.7;
+    color:var(--ink);
+    margin:0 0 18px;
+  }
+  article p:first-of-type::first-letter{
+    color:var(--green);
+  }
+
+  .divider{
+    margin:34px 0;
+    height:0;
+    border-top:3px dashed var(--border);
+  }
+</style>
+</head>
+<body>
+<div class="crt" aria-hidden="true"></div>
+<main class="page">
+  <div class="win">
+    <div class="win-bar">
+      <span class="win-dot pink"></span>
+      <span class="win-dot yellow"></span>
+      <span class="win-dot green"></span>
+      <span class="win-title">farmernet@web:~/articles/rethinking_big_tech.md</span>
+    </div>
+    <div class="win-body">
+      <a class="back-link" href="../index.html">&lt;&lt; back to ~/</a>
+
+      <h1 class="article-title">Why We Should Rethink Big Tech, Toxic Social Media, and Privacy-Invasive Software: Protecting Our Minds and Digital Freedom</h1>
+
+      <article>
+        <h2>Introduction</h2>
+        <p>Technology has transformed the way we communicate, learn, work, and experience the world. Smartphones, social networks, and online services have created opportunities that previous generations could only imagine. However, the rapid growth of Big Tech has also created serious concerns about mental health, personal privacy, and individual freedom.</p>
+        <p>Many digital platforms are not designed only to serve users; they are designed to maximize engagement, collect data, and increase profits. As a result, people are spending more time online while losing control over their attention and personal information. To build a healthier digital future, we must rethink our relationship with Big Tech, toxic social media, and privacy-invasive software.</p>
+
+        <h2>The Hidden Cost of Big Tech</h2>
+        <p>Large technology companies have become some of the most powerful organizations in modern society. Their services are often free, but users usually pay with something more valuable: their data and attention.</p>
+        <p>Every search, click, location record, and interaction can become information used to create detailed profiles of individuals. These profiles help companies predict behavior, personalize advertisements, and influence decisions. While data collection can improve user experiences, excessive surveillance creates a world where people are constantly monitored.</p>
+        <p>The problem is not technology itself. Innovation can improve society when it respects human rights. The problem is when companies prioritize growth and profit over transparency, privacy, and user control.</p>
+
+        <h2>Toxic Social Media and the Human Mind</h2>
+        <p>Social media was created to connect people, but many platforms have evolved into systems that compete for attention. Their algorithms often promote content that generates strong emotional reactions because anger, fear, and controversy keep users engaged for longer periods.</p>
+        <p>This design can negatively affect mental health. Many people compare themselves with carefully edited versions of others' lives, leading to anxiety, loneliness, and lower self-esteem. Short-form content and endless scrolling can also reduce our ability to focus deeply and spend meaningful time on real-world activities.</p>
+        <p>The issue is not that social media is always harmful. These platforms can help people communicate, learn, and build communities. However, users should recognize when technology is controlling their behavior instead of supporting their goals.</p>
+
+        <h2>Privacy-Invasive Software and Digital Freedom</h2>
+        <p>Privacy is becoming one of the most important issues of the digital age. Many applications collect far more information than they need. A simple flashlight app, for example, should not require access to contacts, location, or personal files.</p>
+        <p>When people lose control over their data, they also lose part of their digital freedom. Privacy is not only about hiding secrets; it is about having the ability to decide who can access our information and how it is used.</p>
+        <p>Privacy-focused technologies, open-source software, encryption, and decentralized platforms provide alternatives that give users more control. These tools represent a different vision of technology: one where users are treated as individuals rather than sources of data.</p>
+
+        <h2>A More Responsible Digital Future</h2>
+        <p>Solving these problems requires action from both companies and individuals. Technology companies should create products with privacy and user well-being as priorities instead of treating them as optional features. Stronger regulations and greater transparency can also help prevent abuse.</p>
+        <p>At the same time, individuals can make smarter choices. Using privacy-respecting software, limiting unnecessary social media use, and learning basic cybersecurity skills can help people regain control over their digital lives.</p>
+        <p>Digital freedom does not mean rejecting technology. It means creating a relationship with technology where humans remain in control.</p>
+
+        <h2>Conclusion</h2>
+        <p>Big Tech, social media, and digital services have brought enormous benefits to society, but they also introduce new risks. A future dominated by surveillance, addiction-driven design, and data exploitation is not inevitable.</p>
+        <p>We should rethink the way technology is created and used. Protecting our minds and our privacy is not a rejection of progress; it is a demand for better progress. Technology should empower people, protect their freedom, and improve human life rather than manipulate it.</p>
+      </article>
+
+      <div class="divider"></div>
+      <a class="back-link" href="../index.html">&lt;&lt; back to ~/</a>
+    </div>
+  </div>
+</main>
+</body>
+</html>
