@@ -1,0 +1,21 @@
+MyBot – Terms of Service
+
+Effective Date: September 17, 2026
+1. Nature of the Service
+
+This Discord bot is an educational project and learning output developed solely by users 1116705555461984298 and 959977374471028779. The bot is provided strictly for academic, testing, and experimental purposes.
+2. Free of Charge & Non-Commercial Use
+
+This bot is provided completely free of charge and operated on a strictly non-commercial basis. The developers do not monetize, sell premium features, or generate revenue through the operation of this bot.
+3. Acceptance of Terms & Risk Acknowledgement
+
+By inviting, accessing, or interacting with this bot in any Discord server, you acknowledge that you have read, understood, and agreed to these Terms of Service. Your use of this bot is entirely at your own risk.
+4. Limitation of Liability & Disclaimer
+
+    User Responsibility: You expressly agree that any loss, damage, data corruption, service interruption, or misconfiguration resulting from the use of this bot shall be borne entirely by you (the user).
+
+    No Developer Liability: The developers (1116705555461984298 and 959977374471028779) assume no liability or responsibility for any direct, indirect, incidental, or consequential damages arising out of or in connection with the use of, or inability to use, this bot.
+
+5. Modification and Termination
+
+Because this bot is a personal learning assignment, the developers reserve the right to modify, suspend, or terminate the bot’s operation or update these Terms at any time without prior notice.

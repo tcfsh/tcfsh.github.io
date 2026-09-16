@@ -1,0 +1,15 @@
+MyBot – Privacy Policy
+
+Effective Date: September 17, 2026
+1. Information Collection and Usage
+
+As a non-commercial educational project, this bot only processes or stores the minimum amount of data required for essential functionality (such as Discord User IDs, Guild IDs, or command usage logs). Data collected is strictly used for testing and learning verification and will never be used for commercial purposes.
+2. Data Security Notice
+
+Because this project is for educational purposes, the data storage environment may not meet commercial-grade security standards. Users are strongly advised not to send sensitive personal information, passwords, or confidential data through the bot.
+3. Data Sharing
+
+We do not sell, rent, trade, or share any collected user data with third parties.
+4. Policy Updates
+
+The developers reserve the right to update this Privacy Policy as needed. Continued use of the bot after any changes constitutes acceptance of the revised policy.
