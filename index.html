@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Site</title>
+<link rel="icon" id="favicon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fg: #f2f2f5;
+    --mut: #a3a3ae;
+    --card: rgba(28, 28, 32, .55);
+    --line: rgba(255, 255, 255, .09);
+    --acc: #2ea023;
+  }
+  * { box-sizing: border-box; }
+  html { min-height: 100%; }
+  body {
+    margin: 0; min-height: 100vh; color: var(--fg);
+    font-family: "Roboto", sans-serif;
+    display: grid; place-items: center;
+    background: #181c21;
+    padding: 24px 16px 40px;
+  }
+
+  /* Background: Uiverse.io by chase2k25 (rare-bear-68), fixed behind the page */
+  .container {
+    position: fixed; inset: 0; z-index: -1;
+    background: #181c21;
+    display: flex; align-items: stretch; justify-content: stretch;
+  }
+  .pattern-bg {
+    position: relative;
+    width: 100%; height: 100%; overflow: hidden;
+    background: repeating-linear-gradient(
+      135deg,
+      #232526 0px,
+      #232526 60px,
+      #23252699 70px,
+      #414345 130px
+    );
+  }
+  .cube-svg {
+    position: absolute;
+    width: 200%; height: 200%;
+    left: -30%; top: -20%;
+    background: transparent;
+    opacity: 0.7;
+    z-index: 1;
+    animation: cubeMove 18s linear infinite alternate;
+  }
+  @keyframes cubeMove {
+    from { transform: translateY(0) scale(1); }
+    to   { transform: translateY(-20%) scale(1.02) rotate(1deg); }
+  }
+  .wrap { width: 100%; max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
+
+  /* Card: Uiverse.io by Yaseen549 (chilly-dragon-64), with transparency and blur */
+  .card {
+    border-radius: 14px;
+    background: rgba(33, 33, 33, .62);   /* originally #212121, now translucent */
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, .12);
+    box-shadow: 15px 15px 30px rgba(25, 25, 25, .7),
+                -15px -15px 30px rgba(60, 60, 60, .55),
+                0 0 14px rgba(255, 255, 255, .05);
+    padding: 24px;
+    transition: transform .25s ease;
+  }
+  .card:hover { transform: translateY(-3px); border-color: rgba(255, 255, 255, .2); }
+
+  .profile, .music { min-height: 154px; display: flex; align-items: center; gap: 20px; }
+  .profile { grid-column: span 7; }
+  .music   { grid-column: span 5; }
+  .about   { grid-column: span 9; }
+  .links   { grid-column: span 3; }
+  .projects{ grid-column: span 12; }
+
+  .avatar {
+    width: 104px; height: 104px; border-radius: 50%; flex: none; overflow: hidden;
+    border: 1px solid rgba(255,255,255,.35);
+    background: linear-gradient(135deg, #3b3b4a, #1d1d26);
+    display: grid; place-items: center; font-size: 40px; font-weight: 700; color: var(--mut);
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .name { font-size: 26px; font-weight: 800; margin: 0; }
+  .handle { margin: 4px 0 0; color: var(--mut); font-size: 14px; }
+
+  .cover {
+    width: 104px; height: 104px; border-radius: 10px; flex: none; overflow: hidden;
+    border: 1px solid rgba(255,255,255,.35);
+    background: linear-gradient(135deg, #3b3b4a, #1d1d26);
+    display: grid; place-items: center; font-size: 36px; color: var(--mut);
+  }
+  .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .np { min-width: 0; }
+  .status { font-size: 12px; letter-spacing: .02em; color: var(--mut); display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--mut); }
+  .live .dot { background: var(--acc); animation: pulse 2.8s infinite; }
+  @keyframes pulse { 50% { opacity: .25; } }
+  .song { font-size: 18px; font-weight: 700; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .song a { color: inherit; text-decoration: none; }
+  .song a:hover { text-decoration: underline; }
+  .artist { margin: 3px 0 0; color: var(--mut); font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  h2 { margin: 0 0 12px; font-size: 13px; letter-spacing: .04em; color: var(--mut); font-weight: 500; }
+  .about p { margin: 0; line-height: 1.8; font-size: 15px; white-space: pre-line; }
+
+  .links ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .links a {
+    display: block; padding: 10px 14px; border-radius: 8px; color: var(--fg); text-decoration: none; font-size: 14px;
+    background: rgba(255,255,255,.06); border: 1px solid transparent; transition: background .2s, border-color .2s;
+  }
+  .links a:hover { background: rgba(255,255,255,.12); border-color: var(--line); }
+
+  .projects h2 { text-align: center; font-size: 15px; margin-bottom: 18px; }
+  .plist { display: grid; gap: 10px; }
+  .proj {
+    display: block; text-decoration: none; color: inherit; padding: 14px 16px; border-radius: 8px;
+    background: rgba(255,255,255,.05); border: 1px solid transparent; transition: background .2s, border-color .2s;
+  }
+  a.proj:hover { background: rgba(255,255,255,.11); border-color: var(--line); }
+  .proj b { font-size: 16px; }
+  .proj span { display: block; margin-top: 4px; color: var(--mut); font-size: 14px; line-height: 1.6; }
+  .empty { text-align: center; color: var(--mut); font-size: 14px; }
+
+  @media (max-width: 720px) {
+    .profile, .music, .about, .links, .projects { grid-column: 1 / -1; }
+    .avatar, .cover { width: 84px; height: 84px; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="pattern-bg">
+      <svg preserveAspectRatio="xMidYMid slice" height="100%" width="100%" class="cube-svg" viewBox="0 0 120 104">
+        <defs>
+          <linearGradient y2="100%" x2="100%" y1="0%" x1="0%" id="cube-dark">
+            <stop stop-color="#232526" offset="0%"></stop>
+            <stop stop-color="#414345" offset="100%"></stop>
+          </linearGradient>
+          <linearGradient y2="0%" x2="100%" y1="100%" x1="0%" id="cube-mid">
+            <stop stop-color="#4b6cb7" offset="0%"></stop>
+            <stop stop-color="#182848" offset="100%"></stop>
+          </linearGradient>
+          <linearGradient y2="100%" x2="0%" y1="0%" x1="100%" id="cube-light">
+            <stop stop-color="#a8edea" offset="0%"></stop>
+            <stop stop-color="#fed6e3" offset="100%"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="card profile">
+      <div class="avatar" id="avatar"></div>
+      <div>
+        <h1 class="name" id="name"></h1>
+        <p class="handle" id="handle"></p>
+      </div>
+    </section>
+
+    <section class="card music">
+      <div class="cover" id="cover">♪</div>
+      <div class="np">
+        <div class="status" id="status"><span class="dot"></span><span id="statusText">Loading…</span></div>
+        <p class="song" id="song">—</p>
+        <p class="artist" id="artist">&nbsp;</p>
+      </div>
+    </section>
+
+    <section class="card about">
+      <h2>About</h2>
+      <p id="bio"></p>
+    </section>
+
+    <section class="card links">
+      <h2>Links</h2>
+      <ul id="linkList"></ul>
+    </section>
+
+    <section class="card projects">
+      <h2>Project</h2>
+      <div class="plist" id="plist"></div>
+    </section>
+  </main>
+
+<script>
+// ================= Edit your info here =================
+const CONFIG = {
+  FAVICON:'favicon.png',
+  NAME: 'Farmernet',
+  HANDLE: '@fntw',
+  AVATAR: 'avatar.jpeg',            // avatar path; falls back to the first letter of the name
+ BIO: `Hi, I'm Farmernet.
+
+      A high school student from Taiwan 🇹🇼
+      Studying at TCFSH.
+      Turning 17 next month btw.
+
+      Been off social media for a few months for privacy.
+      Music is pretty much my life now.
+
+      Digital minimalist. Atheist. De-Meta. De-Google.`,
+  LASTFM_USER: 'fntw',
+  LASTFM_API_KEY: 'ece0803a360eba2591a5119b2e3aa69e',
+  POLL_MS: 10000,
+  LINKS: [
+    { name: 'GitHub',  url: 'https://github.com/farmernettw' },
+    { name: 'Last.fm', url: 'https://www.last.fm/user/fntw' },
+    { name: 'Email',   url: 'mailto:hi@fntw.cc' },
+    { name: 'haruhikage',   url: 'https://haruhikage.fntw.cc' },
+  ],
+  // Add a project here and it will be listed below automatically
+  PROJECTS: [
+    { title: 'MyBot', desc: 'Simple multi-functional Discord bot, ts is my school work.', url: 'https://github.com/farmernettw/mybot' },
+    { title: 'farmernet', desc: 'Fully vibe coded Threads-like social media, just for experiment.', url: 'https://farmernet.fntw.cc' },
+  ],
+};
+// =====================================================
+
+const $ = id => document.getElementById(id);
+
+// --- Basic info ---
+document.title = CONFIG.NAME;
+$('favicon').href = CONFIG.FAVICON;
+$('name').textContent = CONFIG.NAME;
+$('handle').textContent = CONFIG.HANDLE;
+$('bio').textContent = CONFIG.BIO;
+
+(function avatar() {
+  const box = $('avatar');
+  const img = new Image();
+  img.alt = '';
+  img.onload = () => { box.textContent = ''; box.appendChild(img); };
+  img.onerror = () => { box.textContent = (CONFIG.NAME || '?').trim().charAt(0).toUpperCase(); };
+  box.textContent = (CONFIG.NAME || '?').trim().charAt(0).toUpperCase();
+  img.src = CONFIG.AVATAR;
+})();
+
+CONFIG.LINKS.forEach(l => {
+  const li = document.createElement('li');
+  const a = document.createElement('a');
+  a.href = l.url; a.textContent = l.name;
+  if (/^https?:/.test(l.url)) { a.target = '_blank'; a.rel = 'noopener'; }
+  li.appendChild(a); $('linkList').appendChild(li);
+});
+
+(function projects() {
+  const list = $('plist');
+  if (!CONFIG.PROJECTS.length) {
+    const p = document.createElement('p'); p.className = 'empty'; p.textContent = 'No projects yet';
+    list.appendChild(p); return;
+  }
+  CONFIG.PROJECTS.forEach(p => {
+    const el = document.createElement(p.url ? 'a' : 'div');
+    el.className = 'proj';
+    if (p.url) { el.href = p.url; el.target = '_blank'; el.rel = 'noopener'; }
+    const b = document.createElement('b'); b.textContent = p.title;
+    el.appendChild(b);
+    if (p.desc) { const s = document.createElement('span'); s.textContent = p.desc; el.appendChild(s); }
+    list.appendChild(el);
+  });
+})();
+
+// --- Last.fm now playing ---
+let lastKey = null;
+
+function realImage(t) {
+  const imgs = t.image || [];
+  for (let i = imgs.length - 1; i >= 0; i--) {
+    const u = imgs[i]['#text'];
+    if (u && !u.includes('2a96cbd8b46e442fc41c2b86b821562f')) return u; // skip the default placeholder image
+  }
+  return '';
+}
+
+async function poll() {
+  if (CONFIG.LASTFM_API_KEY.startsWith('YOUR_')) { $('statusText').textContent = 'Last.fm not configured'; return; }
+  try {
+    const q = new URLSearchParams({
+      method: 'user.getrecenttracks', user: CONFIG.LASTFM_USER,
+      api_key: CONFIG.LASTFM_API_KEY, format: 'json', limit: 1,
+    });
+    const r = await fetch('https://ws.audioscrobbler.com/2.0/?' + q);
+    const d = await r.json();
+    if (d.error) throw new Error(d.message);
+    let tracks = d.recenttracks.track || [];
+    if (!Array.isArray(tracks)) tracks = [tracks];
+    const t = tracks[0];
+    if (!t) { $('statusText').textContent = 'No recent tracks'; return; }
+
+    const playing = !!(t['@attr'] && t['@attr'].nowplaying === 'true');
+    const artist = t.artist['#text'] || t.artist.name || '';
+    const key = artist + '\u0000' + t.name + '\u0000' + playing;
+    if (key === lastKey) return;
+    lastKey = key;
+
+    $('status').classList.toggle('live', playing);
+    $('statusText').textContent = playing ? 'Now playing' : 'Last played';
+
+    const song = $('song'); song.textContent = '';
+    const a = document.createElement('a');
+    a.href = t.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = t.name;
+    song.appendChild(a);
+    $('artist').textContent = artist;
+
+    const cover = $('cover'); cover.textContent = '♪';
+    const src = realImage(t);
+    if (src) {
+      const img = new Image(); img.alt = '';
+      img.onload = () => { cover.textContent = ''; cover.appendChild(img); };
+      img.src = src;
+    }
+  } catch (e) {
+    $('statusText').textContent = 'Unable to load data';
+  }
+}
+poll();
+setInterval(poll, CONFIG.POLL_MS);
+</script>
+</body>
+</html>
